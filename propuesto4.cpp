@@ -46,3 +46,17 @@ int main() {
     int indiceMayor = -1;
 
     cout << "\nAtletas del pais " << paisBuscar << ":\n";
+    for (int i = 0; i < n; i++) {
+        if (atletas[i].pais == paisBuscar) {
+            cout << "\nNombre: " << atletas[i].nombre << endl;
+            cout << "Disciplina: " << atletas[i].disciplina << endl;
+            cout << "Medallas: " << atletas[i].medallas << endl;
+
+            encontrado = true;
+
+            if (atletas[i].medallas > mayor) {
+                mayor = atletas[i].medallas;
+                indiceMayor = i;
+            }
+        }
+    }
