@@ -34,3 +34,15 @@ int main() {
         cout << "Numero de medallas: ";
         cin >> atletas[i].medallas;
     }
+      cin.ignore();
+
+    string paisBuscar;
+
+    cout << "\nIngrese el nombre del pais: ";
+    getline(cin, paisBuscar);
+
+    bool encontrado = false;
+    int mayor = -1;
+    int indiceMayor = -1;
+
+    cout << "\nAtletas del pais " << paisBuscar << ":\n";
