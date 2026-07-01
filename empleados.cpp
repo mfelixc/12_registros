@@ -12,9 +12,9 @@ int main () {
     int n;
     cin >> n;
     empleados E[100];
-    int mayor[12];
-    for (int i = 0;i < n;i++){
-        cin.ignore();
+    int mayor[100]; 
+    for (int i = 0; i < n; i++) {
+        mayor[i] = 0;
         cin >> E[i].numero;
         cin >> E[i].nombre;
         for(int j = 0;j < 12;j++){
@@ -26,14 +26,20 @@ int main () {
     int mayores,empleadomayor;
     mayores = mayor [0];
     empleadomayor = 0;
-    for(int i = 1; i < n; i++){
-        if(mayores < mayor [i]){
-        mayores = mayor [i];
-        empleadomayor = i;
+    for (int i = 1; i < n; i++) {
+        if (mayores < mayor[i]) {
+            mayores = mayor[i];
+            empleadomayor = i;
         }
     }
     cout << E[empleadomayor].numero << endl;
-    cout << E[empleadomayor].nombre;
-return 0;  
+    cout << E[empleadomayor].nombre << endl;
+
+    for (int i = 0; i < n; i++) {
+        if (mayor[i] > 100) {
+            E[i].salario = E[i].salario * 1.1;
+        }
+    }
+    return 0; 
 }
 
