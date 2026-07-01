@@ -16,15 +16,16 @@ int main () {
     for (int i = 0; i < n; i++) {
         mayor[i] = 0;
         cin >> E[i].numero;
-        cin >> E[i].nombre;
-        for(int j = 0;j < 12;j++){
-        cin >> E[i].ventas[j];
-        mayor[i] = mayor[i] + E[i].ventas[j];
+        cin >> E[i].nombre; 
+        for(int j = 0; j < 12; j++){
+            cin >> E[i].ventas[j];
+            mayor[i] = mayor[i] + E[i].ventas[j];
         }
         cin >> E[i].salario;  
     }
-    int mayores,empleadomayor;
-    mayores = mayor [0];
+
+    int mayores, empleadomayor;
+    mayores = mayor[0];
     empleadomayor = 0;
     for (int i = 1; i < n; i++) {
         if (mayores < mayor[i]) {
@@ -40,6 +41,18 @@ int main () {
             E[i].salario = E[i].salario * 1.1;
         }
     }
+
+    for (int i = 0; i < n; i++) {
+        bool menosDe30 = false;
+        for (int j = 0; j < 12; j++) {
+            if (E[i].ventas[j] < 30) {
+                menosDe30 = true;
+            }
+        }
+        if (menosDe30) {
+            cout << E[i].numero << endl;
+            cout << E[i].nombre << endl;
+        }
+    }
     return 0; 
 }
-
