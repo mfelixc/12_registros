@@ -59,3 +59,7 @@ int main() {
         }
 
     } while (mes != 0);
+    cout << "\nPrograma finalizado.\n";
+
+    return 0;
+}
