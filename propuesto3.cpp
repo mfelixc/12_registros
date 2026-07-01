@@ -34,3 +34,13 @@ int main() {
         cout << "Anio de nacimiento: ";
         cin >> personas[i].anio;
     }
+    int mes;
+
+    do {
+        cout << "\nIngrese un mes (1-12) o 0 para salir: ";
+        cin >> mes;
+
+        if (mes != 0) {
+            bool encontrado = false;
+
+            cout << "\nPersonas que cumplen años en el mes " << mes << ":\n";
