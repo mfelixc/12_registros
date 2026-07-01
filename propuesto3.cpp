@@ -44,3 +44,18 @@ int main() {
             bool encontrado = false;
 
             cout << "\nPersonas que cumplen años en el mes " << mes << ":\n";
+            for (int i = 0; i < n; i++) {
+                if (personas[i].mes == mes) {
+                    cout << personas[i].nombre << " - "
+                         << personas[i].dia << "/"
+                         << personas[i].mes << "/"
+                         << personas[i].anio << endl;
+                    encontrado = true;
+                }
+            }
+
+            if (!encontrado)
+                cout << "No hay personas que cumplen años en ese mes.\n";
+        }
+
+    } while (mes != 0);
