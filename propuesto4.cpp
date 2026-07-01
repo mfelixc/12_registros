@@ -60,3 +60,15 @@ int main() {
             }
         }
     }
+    if (encontrado) {
+        cout << "\nAtleta con mayor numero de medallas:\n";
+        cout << "Nombre: " << atletas[indiceMayor].nombre << endl;
+        cout << "Pais: " << atletas[indiceMayor].pais << endl;
+        cout << "Disciplina: " << atletas[indiceMayor].disciplina << endl;
+        cout << "Medallas: " << atletas[indiceMayor].medallas << endl;
+    } else {
+        cout << "No existen atletas registrados de ese pais.\n";
+    }
+
+    return 0;
+}
