@@ -1,7 +1,8 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
-struct  empleados {
+struct empleados {
 int numero;
 string nombre;
 int ventas[12];
@@ -10,35 +11,41 @@ float salario;
 
 int main () {
     int n;
+    cout << "Ingrese el numero de empleados a ingresar: ";
     cin >> n;
     empleados E[100];
     int mayor[100]; 
+
     for (int i = 0; i < n; i++) {
         mayor[i] = 0;
+        cout << "Ingrese el numero del empleado: ";
         cin >> E[i].numero;
+        cout << "Ingrese el nombre del empleado: ";
         cin >> E[i].nombre; 
         for(int j = 0; j < 12; j++){
+            cout << "Ingrese las ventas del empleado: ";           
             cin >> E[i].ventas[j];
             mayor[i] = mayor[i] + E[i].ventas[j];
         }
+        cout << "Ingrese el salario del empleado: ";
         cin >> E[i].salario;  
     }
 
-    int mayores, empleadomayor;
-    mayores = mayor[0];
-    empleadomayor = 0;
+    int mayores = mayor[0], empleadomayor = 0;
     for (int i = 1; i < n; i++) {
         if (mayores < mayor[i]) {
             mayores = mayor[i];
             empleadomayor = i;
         }
     }
+    cout << "El numero del empleado que tuvo mas ventas es: ";
     cout << E[empleadomayor].numero << endl;
+    cout << "El nombre del empleado que tuvo mas ventas es: ";
     cout << E[empleadomayor].nombre << endl;
 
     for (int i = 0; i < n; i++) {
         if (mayor[i] > 100) {
-            E[i].salario = E[i].salario * 1.1;
+            E[i].salario *= 1.1;
         }
     }
 
@@ -50,7 +57,9 @@ int main () {
             }
         }
         if (menosDe30) {
+            cout << "El numero del empleado que sus ventas no fueron mas de 30 es: ";      
             cout << E[i].numero << endl;
+            cout << "El nombre del empleado que sus ventas no fueron mas de 30 es: "; 
             cout << E[i].nombre << endl;
         }
     }
