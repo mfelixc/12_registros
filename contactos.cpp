@@ -143,7 +143,31 @@ int main () {
                     cout << "Contacto eliminado con exito." << endl;
                 }
             }
-
+        }
+        else if (opcion == 6) {
+            if (n == 0) {
+                cout << "No hay contactos registrados." << endl;
+            } else {
+                string emailBuscado;
+                cin.ignore();
+                cout << "Ingrese el email del contacto a buscar: ";
+                getline(cin, emailBuscado);
+                int pos = -1;
+                for (int i = 0; i < n; i++) {
+                    if (C[i].email == emailBuscado) {
+                        pos = i;
+                    }
+                }
+                if (pos == -1) {
+                    cout << "No se encontro un contacto con ese email." << endl;
+                } else {
+                    cout << "Contacto encontrado en la posicion: " << (pos + 1) << endl;
+                    cout << "Nombre: " << C[pos].nombreCompleto << endl;
+                    cout << "Sexo: " << C[pos].sexo << endl;
+                    cout << "Edad: " << C[pos].edad << endl;
+                    cout << "Email: " << C[pos].email << endl;
+                }
+            }
         }
     }while (opcion != 0);
     return 0;
