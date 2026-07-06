@@ -118,6 +118,31 @@ int main () {
                     cout << "No se encontraron contactos de ese servidor." << endl;
                 }
             }
+        }
+         else if (opcion == 5) {
+            if (n == 0) {
+                cout << "No hay contactos registrados." << endl;
+            } else {
+                string emailBuscado;
+                cin.ignore();
+                cout << "Ingrese el email del contacto a eliminar: ";
+                getline(cin, emailBuscado);
+                int pos = -1;
+                for (int i = 0; i < n; i++) {
+                    if (C[i].email == emailBuscado) {
+                        pos = i;
+                    }
+                }
+                if (pos == -1) {
+                    cout << "No se encontro un contacto con ese email." << endl;
+                } else {
+                    for (int i = pos; i < n - 1; i++) {
+                        C[i] = C[i + 1];
+                    }
+                    n--;
+                    cout << "Contacto eliminado con exito." << endl;
+                }
+            }
 
         }
     }while (opcion != 0);
