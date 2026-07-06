@@ -169,6 +169,11 @@ int main () {
                 }
             }
         }
+        else if (opcion == 0) {
+            cout << "Saliendo del programa..." << endl;
+        } else {
+            cout << "Opcion incorrecta, por favor ingrese una opcion valida (0 al 6)." << endl;
+        }
     }while (opcion != 0);
     return 0;
 }
