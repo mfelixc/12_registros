@@ -44,6 +44,37 @@ int main () {
                 cout << "Contacto agregado con exito." << endl;
             }
         }
+        else if (opcion == 2) {
+            if (n == 0) {
+                cout << "No hay contactos registrados." << endl;
+            } 
+            else {
+                string nombrebuscado;
+                cin.ignore();
+                cout << "Ingrese el nombre completo del contacto a modificar: ";
+                getline(cin, nombrebuscado);
+                int pos = -1;
+                for (int i = 0; i < n; i++) {
+                    if (C[i].nombreCompleto == nombrebuscado) {
+                        pos = i;
+                    }
+                }
+                if (pos == -1) {
+                    cout << "No se encontro un contacto con ese nombre." << endl;
+                } else {
+                    cout << "Ingrese el nuevo nombre completo: ";
+                    getline(cin, C[pos].nombreCompleto);
+                    cout << "Ingrese el nuevo sexo: ";
+                    getline(cin, C[pos].sexo);
+                    cout << "Ingrese la nueva edad: ";
+                    cin >> C[pos].edad;
+                    cin.ignore();
+                    cout << "Ingrese el nuevo email: ";
+                    getline(cin, C[pos].email);
+                    cout << "Contacto modificado con exito." << endl;
+                }
+            }
+        }
     }while (opcion != 0);
     return 0;
 }
