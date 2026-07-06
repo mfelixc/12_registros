@@ -75,6 +75,21 @@ int main () {
                 }
             }
         }
+        else if (opcion == 3) {
+            if (n == 0) {
+                cout << "No hay contactos registrados." << endl;
+            } else {
+                cout << "----- LISTADO GENERAL DE CONTACTOS -----" << endl;
+                for (int i = 0; i < n; i++) {
+                    cout << "Nombre: " << C[i].nombreCompleto << endl;
+                    cout << "Sexo: " << C[i].sexo << endl;
+                    cout << "Edad: " << C[i].edad << endl;
+                    cout << "Email: " << C[i].email << endl;
+                    cout << "-------------------------------" << endl;
+                }
+            }
+
+        }
     }while (opcion != 0);
     return 0;
 }
