@@ -25,6 +25,25 @@ int main () {
         cout << "0. Salir del programa" << endl;
         cout << "Ingrese una opcion: ";
         cin >> opcion;
+ if (opcion == 1) {
+            if (n >= 100) {
+                cout << "No se pueden agregar mas contactos, la agenda esta llena." << endl;
+            }
+            else {
+                cin.ignore();
+                cout << "Ingrese el nombre completo del contacto: ";
+                getline(cin, C[n].nombreCompleto);
+                cout << "Ingrese el sexo del contacto: ";
+                getline(cin, C[n].sexo);
+                cout << "Ingrese la edad del contacto: ";
+                cin >> C[n].edad;
+                cin.ignore();
+                cout << "Ingrese el email del contacto: ";
+                getline(cin, C[n].email);
+                n++;
+                cout << "Contacto agregado con exito." << endl;
+            }
+        }
     }while (opcion != 0);
     return 0;
 }
