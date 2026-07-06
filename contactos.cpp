@@ -88,6 +88,36 @@ int main () {
                     cout << "-------------------------------" << endl;
                 }
             }
+        }
+        else if (opcion == 4) {
+            if (n == 0) {
+                cout << "No hay contactos registrados." << endl;
+            } else {
+                string servidor;
+                cin.ignore();
+                cout << "Ingrese el servidor a buscar (ejemplo: gmail.com): ";
+                getline(cin, servidor);
+                bool encontrado = false;
+                cout << "----- CONTACTOS DEL SERVIDOR " << servidor << " -----" << endl;
+                for (int i = 0; i < n; i++) {
+                    int largoEmail = C[i].email.size();
+                    int largoServidor = servidor.size();
+                    if (largoEmail >= largoServidor) {
+                        string terminacion = C[i].email.substr(largoEmail - largoServidor, largoServidor);
+                        if (terminacion == servidor) {
+                            cout << "Nombre: " << C[i].nombreCompleto << endl;
+                            cout << "Sexo: " << C[i].sexo << endl;
+                            cout << "Edad: " << C[i].edad << endl;
+                            cout << "Email: " << C[i].email << endl;
+                            cout << "-------------------------------" << endl;
+                            encontrado = true;
+                        }
+                    }
+                }
+                if (!encontrado) {
+                    cout << "No se encontraron contactos de ese servidor." << endl;
+                }
+            }
 
         }
     }while (opcion != 0);
